@@ -1,0 +1,25 @@
+.ol-popup {
+    max-width:300px;
+    min-width:150px;
+    min-height:1.2em;
+}
+
+.ol-popup img {
+    float: left;
+    margin: 0 0.5em 0 0;
+    max-width: 100px;
+    max-height: 100px;
+  }
+
+.ol-popup.default > div {
+    border-color: darkgray !important;
+    padding: 0.5rem;
+}
+
+.ol-popup.default .anchor {
+    color: darkgray !important;
+}
+
+.ol-popup .closeBox {
+    background-color: darkgray !important;
+}
