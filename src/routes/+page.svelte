@@ -577,7 +577,7 @@
           projection: 'EPSG:3857',
         });
 
-        const backgroundLayer = new TileLayer({source: new WMTS(options)});  //new TileLayer({source: new OSM()});
+        const backgroundLayer = new TileLayer({opacity: 0.7, source: new WMTS(options)});  //new TileLayer({source: new OSM()});
         map = new Map({
           target,
           view,
