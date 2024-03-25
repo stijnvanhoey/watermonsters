@@ -471,10 +471,10 @@
     });
 
   let Levels = {
-    'Fantastisch proper': "#018571",
-    'Heel goed': '#80cdc1',
-    'Ai, dat kan beter': "#dfc27d",
-    'Vuil': "#a6611a"
+    'Fantastisch proper': "#079cdf",
+    'Heel goed': '#84d9ef',
+    'Ai, dat kan beter': "#edc8bb",
+    'Vuil': "#e38d75"
   };
 
   let styleCache = {}; // a javascript object literal to cache style
@@ -565,15 +565,16 @@
     if (browser) {
       const view = new View({center: fromLonLat([4.2, 51.]), zoom: 9});
 
-      fetch('https://inspirepub.waterinfo.be/arcgis/rest/services/klimaatportaal/achtergrond_KP/MapServer/WMTS/1.0.0/WMTSCapabilities.xml')
+      //fetch('https://inspirepub.waterinfo.be/arcgis/rest/services/klimaatportaal/achtergrond_KP/MapServer/WMTS/1.0.0/WMTSCapabilities.xml')
+      fetch('https://cartoweb.wmts.ngi.be/1.0.0/WMTSCapabilities.xml')
       .then(function (response) {
         return response.text();
       })
       .then(function (text) {
         const result = parser.read(text);
         const options = optionsFromCapabilities(result, {
-          layer: 'klimaatportaal_achtergrond_KP',
-          matrixSet: 'EPSG:3857',
+          layer: 'topo_grey',
+          projection: 'EPSG:3857',
         });
 
         const backgroundLayer = new TileLayer({source: new WMTS(options)});  //new TileLayer({source: new OSM()});
