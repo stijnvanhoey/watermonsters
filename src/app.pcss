@@ -16,8 +16,11 @@
 }
 
 .ol-popup.default > div {
-	border-color: darkgray !important;
+	border-color: lightgrey !important;
+	border-widt: 1px;
 	padding: 0.5rem;
+	box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+	border-radius: 0.5rem;
 }
 
 .ol-popup.default .anchor {
@@ -27,6 +30,16 @@
 .ol-popup .closeBox {
 	background-color: darkgray !important;
 }
+
+.ol-popup .closeBox::after {
+	line-height: 0.85em !important;
+}
+
+.ol-popup .closeBox {
+	margin: 8px 5px 0 0 !important;
+}
+
+
 
 @tailwind components;
 
